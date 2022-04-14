@@ -1,6 +1,7 @@
 {
   "name": "react-puppeteer-2021",
   "version": "0.1.0",
+  "main": "src/App.js",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -15,7 +16,7 @@
   },
   "scripts": {
     "start": "parcel src/App.js --port 9999",
-    "build": "parcel build src/App.js",
+    "build": "build src/App.js",
     "test": "jest",
     "tst": "jest",
     "eject": "react-scripts eject"
