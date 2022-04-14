@@ -14,9 +14,9 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "parcel src/App.js --port 3000",
     "build": "parcel build src/App.js",
-    "test": "react-scripts test --testPathPattern=.*e2e.test.js$",
+    "test": "jest",
     "tst": "jest",
     "eject": "react-scripts eject"
   },
