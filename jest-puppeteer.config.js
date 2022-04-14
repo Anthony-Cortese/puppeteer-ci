@@ -3,15 +3,16 @@ const ci = Boolean(process.env.CI || false);
 
 const baseOptions = {
   server: {
-    command: "npm run start",
-    port: 3000,
+    command: "npm run serve",
+    port: 9000,
+    launchTimeout: 180000,
   },
 };
 
 const ciPipelineOptions = {
   launch: {
-    executablePath: "/usr/bin/google-chrome-stable",
-    headless: true,
+    headless: process.env.CI === "false",
+
     args: [
       "--ignore-certificate-errors",
       "--no-sandbox",
@@ -19,6 +20,7 @@ const ciPipelineOptions = {
       "--disable-accelerated-2d-canvas",
       "--disable-gpu",
     ],
+    executablePath: "chrome.exe",
   },
   server: baseOptions.server,
 };

@@ -14,7 +14,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "parcel src/App.js --port 3000",
+    "start": "parcel src/App.js --port 9999",
     "build": "parcel build src/App.js",
     "test": "jest",
     "tst": "jest",

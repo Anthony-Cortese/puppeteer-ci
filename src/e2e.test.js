@@ -11,7 +11,7 @@ describe("App.js", () => {
   });
 
   it("displays login in form text", async () => {
-    await page.goto("http://localhost:3000/login");
+    await page.goto("http://localhost:9999/login");
     await page.waitForSelector(".form-header");
 
     const text = await page.$eval(".form-header", (e) => e.textContent);
@@ -19,7 +19,7 @@ describe("App.js", () => {
   });
 
   it("shows a success message after submitting a form", async () => {
-    await page.goto("http://localhost:3000/login");
+    await page.goto("http://localhost:9999/login");
     await page.waitForSelector(".form-header");
 
     await page.click(".form-input__email");
@@ -40,7 +40,7 @@ describe("App.js", () => {
   });
 
   it("shows an error message if authentication fails", async () => {
-    await page.goto("http://localhost:3000/login");
+    await page.goto("http://localhost:9999/login");
     await page.waitForSelector(".form-header");
 
     await page.click(".form-input__email");
@@ -58,7 +58,7 @@ describe("App.js", () => {
   });
 
   it("navigates to the about page", async () => {
-    await page.goto("http://localhost:3000");
+    await page.goto("http://localhost:9999");
     await page.waitForSelector(".App-welcome-text");
 
     await page.click("#about-page-link");
@@ -69,7 +69,7 @@ describe("App.js", () => {
   });
 
   it("navigates to the login page", async () => {
-    await page.goto("http://localhost:3000");
+    await page.goto("http://localhost:9999");
     await page.waitForSelector(".App-welcome-text");
 
     await page.click("#login-page-link");
