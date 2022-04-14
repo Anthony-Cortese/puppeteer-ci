@@ -3,10 +3,19 @@ const puppeteer = require("puppeteer");
 describe("App.js", () => {
   let browser;
   let page;
-  let options = { headless: false, args: ["--no-sandbox"] };
+  // let options = { headless: false, args: ["--no-sandbox"] };
 
   beforeAll(async () => {
-    browser = await puppeteer.launch(options);
+    browser = await puppeteer.launch({
+      headless: false,
+      executablePath: "/usr/bin/chromium-browser",
+      args: [
+        "--disable-gpu",
+        "--disable-setuid-sandbox",
+        "--no-sandbox",
+        "--no-zygote",
+      ],
+    });
     page = await browser.newPage();
   });
 
