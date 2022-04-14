@@ -25,7 +25,7 @@ const ciPipelineOptions = {
     headless: process.env.CI === "false",
     ignoreDefaultArgs: ["--disable-extensions"],
     args: ["--no-sandbox"],
-    executablePath: "chrome.exe",
+    executablePath: "/usr/bin/google-chrome-stable",
   },
   server: baseOptions.server,
 };
