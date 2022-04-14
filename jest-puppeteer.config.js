@@ -3,23 +3,28 @@ const ci = Boolean(process.env.CI || false);
 
 const baseOptions = {
   server: {
-    command: "npm run serve",
-    port: 9000,
+    command: "npm run serv",
+    port: 9999,
     launchTimeout: 180000,
   },
 };
 
 const ciPipelineOptions = {
+  // launch: {
+  //   executablePath: "/usr/bin/google-chrome-stable",
+  //   headless: true,
+  //   args: [
+  //     "--ignore-certificate-errors",
+  //     "--no-sandbox",
+  //     "--disable-setuid-sandbox",
+  //     "--disable-accelerated-2d-canvas",
+  //     "--disable-gpu",
+  //   ],
+  // },
   launch: {
     headless: process.env.CI === "false",
-
-    args: [
-      "--ignore-certificate-errors",
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-accelerated-2d-canvas",
-      "--disable-gpu",
-    ],
+    ignoreDefaultArgs: ["--disable-extensions"],
+    args: ["--no-sandbox"],
     executablePath: "chrome.exe",
   },
   server: baseOptions.server,
