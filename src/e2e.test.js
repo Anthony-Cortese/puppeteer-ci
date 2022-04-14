@@ -3,7 +3,7 @@ const puppeteer = require("puppeteer");
 describe("App.js", () => {
   let browser;
   let page;
-  let options = { headless: false };
+  let options = { headless: false, args: ["--no-sandbox"] };
 
   beforeAll(async () => {
     browser = await puppeteer.launch(options);
