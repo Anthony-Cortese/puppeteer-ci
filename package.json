@@ -44,6 +44,6 @@
     "babel-plugin-istanbul": "^6.1.1",
     "jest-puppeteer": "^6.1.0",
     "jest-puppeteer-istanbul": "^0.5.3",
-    "parcel": "^2.4.1"
+    "parcel": "^2.0.0-alpha.3.2"
   }
 }
