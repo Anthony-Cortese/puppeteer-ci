@@ -15,8 +15,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "parcel src/App.js --port 9999",
-    "build": "build src/App.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "jest",
     "tst": "jest",
     "eject": "react-scripts eject"
