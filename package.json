@@ -20,8 +20,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    
-    "test": "jest -c jest.config.js --runInBand",
+    "test": "jest --runInBand --detectOpenHandles --forceExit",
+    "ci:integration": "jest -c jest.config.js --runInBand",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
