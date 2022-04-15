@@ -121,3 +121,5 @@ name: Node.js CI
 # - run: npm run build --if-present
 
 # - run: npm test
+
+"test": "jest --runInBand --detectOpenHandles --forceExit",
