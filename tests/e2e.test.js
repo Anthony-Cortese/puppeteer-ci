@@ -7,7 +7,11 @@ describe("App.js", () => {
 
   beforeAll(async () => {
     browser = await puppeteer.launch({
-      options,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      executablePath:
+        process.env.CI === true ? process.env.PUPPETEER_EXEC_PATH : "",
+      headless: false,
+      devtools: false,
     });
     page = await browser.newPage();
   });
