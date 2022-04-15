@@ -1,9 +1,9 @@
-const puppeteer = require("jest-puppeteer");
+const puppeteer = require("puppeteer");
 
 describe("App.js", () => {
   let browser;
   let page;
-  let options = { headless: false, args: ["--no-sandbox"] };
+  let options = { headless: false };
 
   beforeAll(async () => {
     browser = await puppeteer.launch({
@@ -80,4 +80,6 @@ describe("App.js", () => {
     const text = await page.$eval(".App-welcome-text", (e) => e.textContent);
     expect(text).toContain("This is the Login page.");
   });
+
+  afterAll(() => browser.close());
 });

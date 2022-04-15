@@ -1,4 +1,4 @@
-const Downloader = require("./src/Download/Downloader");
+const Downloader = require("./Downloader");
 
 const fs = require("fs");
 const puppeteer = require("puppeteer");
