@@ -23,7 +23,8 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
-      steps:
+      
+    steps:
         - uses: actions/setup-node@v2
           with:
             node-version: ${{ matrix.node-version }}
@@ -49,4 +50,4 @@ jobs:
 
         - run: npm ci
         - run: npm run build --if-present
-        - run: npm test
+        - run: npm test  
