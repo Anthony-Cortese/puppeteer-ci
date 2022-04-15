@@ -1,13 +1,13 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-extra");
 
 describe("App.js", () => {
   let browser;
   let page;
-  let options = { headless: false };
 
   beforeAll(async () => {
     browser = await puppeteer.launch({
-      options,
+      args: ["--no-sandbox"],
+      headless: false,
     });
     page = await browser.newPage();
   });
