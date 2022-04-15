@@ -18,8 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest -c jest.config.js --Watch",
-    "tst": "jest",
+    
+    "test": "jest --detectOpenHandles",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
