@@ -1,4 +1,4 @@
-const puppeteer = require("puppeteer-extra");
+const puppeteer = require("puppeteer");
 
 describe("App.js", () => {
   let browser;
