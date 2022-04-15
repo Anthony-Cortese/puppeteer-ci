@@ -27,6 +27,5 @@
 module.exports = {
   launch: {
     headless: process.env.CI === "false",
-    args: ["--no-sandbox"],
   },
 };

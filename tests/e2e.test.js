@@ -12,6 +12,28 @@ describe("App.js", () => {
     page = await browser.newPage();
   });
 
+  it("navigates to the about page", async () => {
+    await page.goto("http://localhost:3000");
+    await page.waitForSelector(".App-welcome-text");
+
+    await page.click("#about-page-link");
+    await page.waitForSelector(".App-welcome-text");
+
+    const text = await page.$eval(".App-welcome-text", (e) => e.textContent);
+    expect(text).toContain("This is the about page.");
+  });
+
+  it("navigates to the login page", async () => {
+    await page.goto("http://localhost:3000");
+    await page.waitForSelector(".App-welcome-text");
+
+    await page.click("#login-page-link");
+    await page.waitForSelector(".App-welcome-text");
+
+    const text = await page.$eval(".App-welcome-text", (e) => e.textContent);
+    expect(text).toContain("This is the Login page.");
+  });
+
   it("displays login in form text", async () => {
     await page.goto("http://localhost:3000/login");
     await page.waitForSelector(".form-header");
@@ -57,27 +79,5 @@ describe("App.js", () => {
     const text = await page.$eval(".form-error-text", (e) => e.textContent);
 
     expect(text).toContain("Please enter a correct username/password.");
-  });
-
-  it("navigates to the about page", async () => {
-    await page.goto("http://localhost:3000");
-    await page.waitForSelector(".App-welcome-text");
-
-    await page.click("#about-page-link");
-    await page.waitForSelector(".App-welcome-text");
-
-    const text = await page.$eval(".App-welcome-text", (e) => e.textContent);
-    expect(text).toContain("This is the about page.");
-  });
-
-  it("navigates to the login page", async () => {
-    await page.goto("http://localhost:3000");
-    await page.waitForSelector(".App-welcome-text");
-
-    await page.click("#login-page-link");
-    await page.waitForSelector(".App-welcome-text");
-
-    const text = await page.$eval(".App-welcome-text", (e) => e.textContent);
-    expect(text).toContain("This is the Login page.");
   });
 });
