@@ -7,7 +7,6 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "chrome-aws-lambda": "^10.1.0",
     "jest-environment-puppeteer": "^6.0.3",
     "puppeteer": "^13.5.2",
     "puppeteer-core": "^13.5.2",
