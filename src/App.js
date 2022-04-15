@@ -68,7 +68,7 @@ function Login() {
             />
 
             <button type="submit" className="form-submit-button">
-              Submit
+              Button
             </button>
           </form>
         )}
