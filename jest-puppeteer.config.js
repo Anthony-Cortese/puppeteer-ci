@@ -1,10 +1,12 @@
 module.exports = {
   launch: {
-    headless: false,
-    defaultViewport: {
-      width: 1200,
-      height: 800,
-    },
-    args: ["--no-sandbox"],
+    dumpio: true,
+    headless: true, //process.env.HEADLESS !== 'false',
+  },
+  server: {
+    command: `npm start`,
+    port: 3000,
+    launchTimeout: 10000,
+    debug: true,
   },
 };
