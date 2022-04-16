@@ -16,6 +16,10 @@ jobs:
         with:
           node-version: "16"
 
+      - uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: latest
+
       - name: Caching nodeJS
         uses: actions/cache@v2
         id: npm-cache
