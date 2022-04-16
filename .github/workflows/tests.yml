@@ -6,7 +6,6 @@ jobs:
   ui-test:
     runs-on: ubuntu-latest
     env:
-      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "false"
       CI: "true"
     steps:
       - uses: actions/checkout@v2
@@ -27,8 +26,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
-      - run: npm install --ignore-scripts
 
       - name: End to End Test
         run: |
