@@ -1,12 +1,14 @@
 module.exports = {
   launch: {
-    dumpio: true,
-    headless: true, //process.env.HEADLESS !== 'false',
-  },
-  server: {
-    command: `npm start`,
-    port: 3000,
-    launchTimeout: 10000,
-    debug: true,
+    headless: process.env.HEADLESS !== "false",
+    slowMo: process.env.SLOWMO ? process.env.SLOWMO : 0,
+    devtools: true,
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-gpu",
+      "--disable-dev-shm-usage",
+      "--disable-web-security",
+    ],
   },
 };
