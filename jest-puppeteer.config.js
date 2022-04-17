@@ -2,13 +2,8 @@
 // const ci = Boolean(process.env.CI || false);
 
 module.exports = {
-  server: {
-    command: "npm run start",
-    port: 3000,
-  },
-
   launch: {
-    headless: process.env.HEADLESS !== "false",
+    headless: process.env.HEADLESS !== false,
     slowMo: process.env.SLOWMO ? process.env.SLOWMO : 0,
 
     args: [

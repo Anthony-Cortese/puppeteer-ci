@@ -1,4 +1,5 @@
 const timeout = process.env.SLOWMO ? 30000 : 10000;
+
 const puppeteer = require("puppeteer");
 
 describe("Test header and title of the page", () => {
@@ -36,24 +37,14 @@ describe("Test header and title of the page", () => {
   });
 
   test(
-    "Title of the page",
+    "Take screenshot of home page",
     async () => {
-      const title = await page.title();
-      expect(title).toBe("React App");
-    },
-    timeout
-  );
-
-  test(
-    "Header of the page",
-    async () => {
-      const headerHandle = await page.$(".learn_header");
-      const html = await page.evaluate(
-        (headerHandle) => headerHandle.innerHTML,
-        headerHandle
-      );
-
-      expect(html).toBe("What will you learn");
+      await page.setViewport({ width: 1920, height: 1080 });
+      await page.screenshot({
+        path: "./src/screenshots/home.jpg",
+        fullpage: true,
+        type: "jpeg",
+      });
     },
     timeout
   );

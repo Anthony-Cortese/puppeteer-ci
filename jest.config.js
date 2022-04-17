@@ -3,5 +3,5 @@ module.exports = {
   globals: {
     URL: "http://localhost:3000",
   },
-  testRegex: "./*\\e2e\\.test\\.js$",
+  testMatch: ["**/__tests__/**/*.test.js"],
 };
