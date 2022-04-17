@@ -95,7 +95,7 @@ describe("Test header and title of the page", () => {
 
   beforeAll(async () => {
     browser = await puppeteer.launch({
-      headless: process.env.HEADLESS !== "false",
+      headless: false,
       slowMo: process.env.SLOWMO ? process.env.SLOWMO : 0,
       devtools: true,
       args: [
@@ -110,7 +110,9 @@ describe("Test header and title of the page", () => {
   });
 
   beforeAll(async () => {
-    await page.goto(URL, { waitUntil: "domcontentloaded" });
+    await page.goto("http://localhost:3000/", {
+      waitUntil: "domcontentloaded",
+    });
   });
 
   // test(
