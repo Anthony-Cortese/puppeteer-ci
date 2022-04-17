@@ -43,9 +43,6 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "preset": "jest-puppeteer"
-  },
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "jest-puppeteer": "^6.1.0"
