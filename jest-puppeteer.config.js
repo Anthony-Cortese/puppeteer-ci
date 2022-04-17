@@ -1,25 +1,26 @@
 // get environment varable
-const ci = Boolean(process.env.CI || false);
+// const ci = Boolean(process.env.CI || false);
 
-const baseOptions = {
+module.exports = {
   server: {
     command: "npm run start",
     port: 3000,
   },
-};
 
-const ciPipelineOptions = {
   launch: {
-    headless: false,
+    headless: process.env.HEADLESS !== "false",
+    slowMo: process.env.SLOWMO ? process.env.SLOWMO : 0,
+
     args: [
-      "--ignore-certificate-errors",
       "--no-sandbox",
       "--disable-setuid-sandbox",
-      "--disable-accelerated-2d-canvas",
       "--disable-gpu",
+      "--disable-dev-shm-usage",
+      "--disable-web-security",
     ],
+    defaultViewport: {
+      width: 1024,
+      height: 768,
+    },
   },
-  server: baseOptions.server,
 };
-
-module.exports = ci ? ciPipelineOptions : baseOptions;

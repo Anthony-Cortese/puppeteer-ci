@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "main": "src/App.js",
   "private": true,
+ 
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -19,9 +20,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --runInBand --detectOpenHandles --forceExit",
-    "test:integration": "jest -c jest.config.js",
-    "ci:integration": "jest -c jest.config.js --runInBand",
+    "test1": "jest --runInBand --detectOpenHandles --forceExit",
+    "test": "jest -c jest.config.js --detectOpenHandles --forceExit --runInBand",
+    "test3": "jest -c jest-config.js --detectOpenHandles --forceExit --runInBand",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,6 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "preset": "jest-puppeteer"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
