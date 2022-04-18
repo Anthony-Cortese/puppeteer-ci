@@ -10,7 +10,6 @@ describe("Test header and title and login functionality on the page", () => {
     slowMo: process.env.SLOWMO ? process.env.SLOWMO : 0,
 
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    // executablePath: "/usr/bin/chromium-browser",
     defaultViewport: {
       width: 900,
       height: 768,
@@ -32,7 +31,7 @@ describe("Test header and title and login functionality on the page", () => {
 
   test("Title of the page", async (done) => {
     const title = await page.title();
-    expect(title).toBe("React App");
+    expect(title).toBe("continous");
     done();
   });
 
