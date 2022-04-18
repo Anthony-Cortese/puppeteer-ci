@@ -57,4 +57,17 @@ describe("Test header and title of the page", () => {
     },
     timeout
   );
+
+  test(
+    "Take screenshot of home page",
+    async () => {
+      await page.setViewport({ width: 1920, height: 1080 });
+      await page.screenshot({
+        path: "./src/screenshots/home.jpg",
+        fullpage: true,
+        type: "jpeg",
+      });
+    },
+    timeout
+  );
 });
