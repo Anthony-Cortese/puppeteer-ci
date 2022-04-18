@@ -7,15 +7,9 @@ describe("Test header and title of the page", () => {
   let options = {
     headless: false,
 
-    slowMo: process.env.SLOWMO ? process.env.SLOWMO : 0,
+    slowMo: 50,
 
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-gpu",
-      "--disable-dev-shm-usage",
-      "--disable-web-security",
-    ],
+    args: ["--no-sandbox"],
     defaultViewport: {
       width: 1024,
       height: 768,
@@ -35,38 +29,37 @@ describe("Test header and title of the page", () => {
     page = await browser.newPage();
   });
 
-  test(
-    "Title of the page",
-    async () => {
-      const title = await page.title();
-      expect(title).toBe("React App");
-    },
-    timeout
-  );
+  test("Title of the page", async (done) => {
+    const title = await page.title();
+    expect(title).toBe("React App");
+    done();
+  });
 
   test(
     "Header of the page",
-    async () => {
+    async (done) => {
       const headerHandle = await page.$(".learn_header");
       const html = await page.evaluate(
         (headerHandle) => headerHandle.innerHTML,
         headerHandle
       );
 
-      expect(html).toBe("What will you learn");
+      expect(html).toBe("Main Page");
+      done();
     },
     timeout
   );
 
   test(
     "Take screenshot of home page",
-    async () => {
+    async (done) => {
       await page.setViewport({ width: 1920, height: 1080 });
       await page.screenshot({
         path: "./src/screenshots/home.jpg",
         fullpage: true,
         type: "jpeg",
       });
+      done();
     },
     timeout
   );
