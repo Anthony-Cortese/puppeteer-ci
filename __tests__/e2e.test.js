@@ -31,7 +31,7 @@ describe("Test header and title and login functionality on the page", () => {
 
   test("Title of the page", async (done) => {
     const title = await page.title();
-    expect(title).toBe("continous");
+    expect(title).toBe("React App");
     done();
   });
 
