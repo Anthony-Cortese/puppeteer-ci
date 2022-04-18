@@ -1,4 +1,4 @@
-const timeout = 10000;
+const timeout = process.env.SLOWMO ? 30000 : 10000;
 const puppeteer = require("puppeteer");
 
 describe("Test header and title and login functionality on the page", () => {
@@ -30,11 +30,11 @@ describe("Test header and title and login functionality on the page", () => {
     page = await browser.newPage();
   });
 
-  // test("Title of the page", async (done) => {
-  //   const title = await page.title();
-  //   expect(title).toBe("Continious Integrations with Puppeteer and Jest");
-  //   done();
-  // });
+  test("Title of the page", async (done) => {
+    const title = await page.title();
+    expect(title).toBe("React App");
+    done();
+  });
 
   test(
     "Header of the page",
