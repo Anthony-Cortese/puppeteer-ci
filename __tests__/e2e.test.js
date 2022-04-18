@@ -7,7 +7,7 @@ describe("Test header and title of the page", () => {
   let options = {
     headless: false,
 
-    slowMo: 50,
+    slowMo: process.env.SLOWMO ? process.env.SLOWMO : 0,
 
     args: ["--no-sandbox"],
     defaultViewport: {
