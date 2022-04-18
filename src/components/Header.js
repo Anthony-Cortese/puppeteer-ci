@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 const Header = () => (
   <header className="header">
     <h1>
-      E2E Testing with <span className="pupp">Puppeteer</span> and{" "}
-      <span className="jest">Jest</span>
+      <span>Continious Integrations with Puppeteer and Jest</span>
     </h1>
     <div className="navigation">
       <Link className="navigation_link" to="/" exact="true">
