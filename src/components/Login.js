@@ -27,24 +27,27 @@ function Login() {
         <p className="App-welcome-text">This is the Login page.</p>
         <h1 className="form-header">Login form</h1>
         {!isUserLoggedIn && (
-          <form className="form" onSubmit={login}>
+          <form className="form" name="testForm" onSubmit={login}>
             {error && (
               <p className="form-error-text">
                 Please enter a correct username/password.
               </p>
             )}
-
+            <label for="App-testOne">test1:</label>
             <input
               type="email"
               required
+              name="email"
               placeholder="Email Address"
               className="form-input form-input__email"
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
             />
+            <label for="App-testTwo">test2:</label>
             <input
               type="password"
+              name="password"
               required
               placeholder="Password"
               className="form-input form-input__password"

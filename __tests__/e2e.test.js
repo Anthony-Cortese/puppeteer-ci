@@ -9,9 +9,10 @@ describe("Test header and title of the page", () => {
 
     slowMo: process.env.SLOWMO ? process.env.SLOWMO : 0,
 
-    args: ["--no-sandbox"],
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    // executablePath: "/usr/bin/chromium-browser",
     defaultViewport: {
-      width: 1024,
+      width: 900,
       height: 768,
     },
   };
@@ -110,4 +111,17 @@ describe("Test header and title of the page", () => {
 
     expect(text).toContain("Please enter a correct username/password.");
   });
+
+  // test('should match a form with a "form" name then fill its controls', async () => {
+  //   await expect(page).toFillForm('form[name="testForm"]', {
+  //     testOne: "username@gmail.com",
+  //     testTwo: "password",
+  //   });
+  // });
+
+  // test('should match a button with a "Submit" text inside', async () => {
+  //   await expect(page).toMatchElement(".form-submit-button", {
+  //     text: "Submit",
+  //   });
+  // });
 });
