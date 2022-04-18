@@ -68,7 +68,7 @@ describe("Test the login page", () => {
 
   test("shows an error message if authentication fails", async () => {
     await page.goto("http://localhost:3000/login");
-    await page.waitForSelector(".form-header");
+    await page.waitForSelector("form");
 
     await page.click(".form-input__email");
     await page.type(".form-input__email", "username@gmail.com");

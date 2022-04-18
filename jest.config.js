@@ -1,7 +1,7 @@
 module.exports = {
   preset: "jest-puppeteer",
-  globals: {
-    URL: "http://localhost:3000",
-  },
+  // globals: {
+  //   URL: "http://localhost:3000",
+  // },
   testMatch: ["**/__tests__/**/*.test.js"],
 };

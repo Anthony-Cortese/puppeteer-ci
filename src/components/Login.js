@@ -25,7 +25,7 @@ function Login() {
     <div className="App">
       <div className="form-wrapper">
         <p className="App-welcome-text">This is the Login page.</p>
-        <h1 className="form-header">Login Form</h1>
+        <h1 className="form-header">Login form</h1>
         {!isUserLoggedIn && (
           <form className="form" onSubmit={login}>
             {error && (

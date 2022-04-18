@@ -1,4 +1,4 @@
-const timeout = process.env.SLOWMO ? 30000 : 10000;
+const timeout = 10000;
 const puppeteer = require("puppeteer");
 
 describe("Test header and title of the page", () => {
@@ -63,4 +63,51 @@ describe("Test header and title of the page", () => {
     },
     timeout
   );
+
+  test("displays login in form text", async () => {
+    const formHandle = await page.$(".form-header");
+    const html = await page.evaluate(
+      (formHandle) => formHandle.innerHTML,
+      formHandle
+    );
+
+    expect(html).toBe("Login form");
+  });
+
+  test("shows a success message after submitting a form", async () => {
+    await page.waitForSelector("form");
+
+    await page.click(".form-input__email");
+    await page.type(".form-input__email", "username@gmail.com");
+
+    await page.click(".form-input__password");
+    await page.type(".form-input__password", "password");
+
+    await page.click(".form-submit-button");
+
+    await page.waitForSelector(".form-success-message");
+    const text = await page.$eval(
+      ".form-success-message",
+      (e) => e.textContent
+    );
+
+    expect(text).toContain("You are now signed in.");
+  });
+
+  test("shows an error message if authentication fails", async () => {
+    await page.waitForSelector("form");
+
+    await page.click(".form-input__email");
+    await page.type(".form-input__email", "username@gmail.com");
+
+    await page.click(".form-input__password");
+    await page.type(".form-input__password", "password123");
+
+    await page.click(".form-submit-button");
+
+    await page.waitForSelector(".form-error-text");
+    const text = await page.$eval(".form-error-text", (e) => e.textContent);
+
+    expect(text).toContain("Please enter a correct username/password.");
+  });
 });

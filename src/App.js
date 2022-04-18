@@ -14,18 +14,6 @@ function App() {
             <Route path="/" element={<Home />} />
           </Routes>
           <Login />
-
-          {/* <div className="App-link-wrapper">
-            <Link className="App-link" id="home-page-link" to="/">
-              Home
-            </Link>
-            <Link className="App-link" id="about-page-link" to="/about">
-              About
-            </Link>
-            <Link className="App-link" id="login-page-link" to="/login">
-              Login
-            </Link>
-          </div> */}
         </header>
       </div>
     </Router>
